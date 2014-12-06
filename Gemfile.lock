@@ -1,0 +1,31 @@
+PATH
+  remote: .
+  specs:
+    deploy-info (0.1.0)
+      rack (~> 1.0)
+      rugged (~> 0.21.0)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    awesome_print (1.2.0)
+    coderay (1.1.0)
+    method_source (0.8.2)
+    pry (0.10.1)
+      coderay (~> 1.1.0)
+      method_source (~> 0.8.1)
+      slop (~> 3.4)
+    rack (1.5.2)
+    rake (10.3.2)
+    rugged (0.21.2)
+    slop (3.6.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  awesome_print
+  bundler (~> 1.0)
+  deploy-info!
+  pry
+  rake
