@@ -1,11 +1,12 @@
 require 'rugged'
 
-module DeployInfo
-  class Deployment
+module RackCommitStats
+  class Commit
     attr_accessor :repo_path
 
+    # TODO: Remove
     def initialize
-      @repo_path = DeployInfo.config.repo_path
+      @repo_path = RackCommitStats.config.repo_path
     end
 
     def branch

@@ -1,6 +1,6 @@
 require 'json'
 
-module DeployInfo
+module RackCommitStats
   class App
     def call(env)
       status = 200
@@ -13,17 +13,17 @@ module DeployInfo
 
     def response
       {
-        branch: deployment.branch,
+        branch: commit.branch,
         commit: {
-          revision: deployment.revision,
-          message:  deployment.message,
-          author:   deployment.author
+          revision: commit.revision,
+          message:  commit.message,
+          author:   commit.author
         }
       }.to_json
     end
 
-    def deployment
-      @_deployment ||= Deployment.new
+    def commit
+      @_commit ||= Commit.new
     end
   end
 end

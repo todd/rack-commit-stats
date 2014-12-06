@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    deploy-info (0.1.0)
+    rack-commit-stats (0.1.0)
       rack (~> 1.0)
       rugged (~> 0.21.0)
 
@@ -26,6 +26,6 @@ PLATFORMS
 DEPENDENCIES
   awesome_print
   bundler (~> 1.0)
-  deploy-info!
   pry
+  rack-commit-stats!
   rake

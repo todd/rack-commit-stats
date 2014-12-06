@@ -1,7 +1,7 @@
 # encoding: utf-8
 
 $:.unshift File.expand_path('../lib', __FILE__)
-require 'deploy-info/version'
+require 'rack-commit-stats/version'
 
 Gem::Specification.new do |spec|
   spec.required_ruby_version = '>= 1.9.3'
@@ -11,15 +11,15 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'bundler', '~> 1.0'
 
   spec.authors       = ['Todd Bealmear']
-  spec.description   = %q{Get deployment details for your Ruby application.}
+  spec.description   = %q{Rack application that displays current Git commit information.}
   spec.email         = ['todd@t0dd.io']
-  spec.files         = %w(LICENSE README.md Rakefile deploy-info.gemspec)
+  spec.files         = %w(LICENSE README.md Rakefile rack-commit-stats.gemspec)
   spec.files        += Dir.glob('lib/**/*.rb')
   spec.files        += Dir.glob('spec/**/*')
-  spec.homepage      = 'https://github.com/todd/deploy-info'
+  spec.homepage      = 'https://github.com/todd/rack-commit-stats'
   spec.licenses      = ['MIT']
-  spec.name          = 'deploy-info'
+  spec.name          = 'rack-commit-stats'
   spec.require_paths = ['lib']
   spec.summary       = spec.description
-  spec.version       = DeployInfo::VERSION
+  spec.version       = RackCommitStats::VERSION
 end

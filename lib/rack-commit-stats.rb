@@ -1,7 +1,7 @@
-module DeployInfo
-  require 'deploy-info/app'
-  require 'deploy-info/deployment'
-  require 'deploy-info/railtie' if defined? Rails
+module RackCommitStats
+  require 'rack-commit-stats/app'
+  require 'rack-commit-stats/commit'
+  require 'rack-commit-stats/railtie' if defined? Rails
 
   DEFAULT_REPO_PATH = '.git'
 

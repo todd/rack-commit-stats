@@ -1,2 +1,2 @@
-require 'deploy-info'
-run DeployInfo::App.new
+require 'rack-commit-stats'
+run RackCommitStats::App.new
