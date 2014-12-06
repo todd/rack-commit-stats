@@ -4,10 +4,8 @@ module DeployInfo
   class Deployment
     attr_accessor :repo_path
 
-    DEFAULT_REPO_PATH = '.'
-
-    def initialize(options = {})
-      @repo_path = options[:repo_path] || DEFAULT_REPO_PATH
+    def initialize
+      @repo_path = DeployInfo.config.repo_path
     end
 
     def branch
