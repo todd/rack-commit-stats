@@ -1,7 +1,7 @@
 module DeployInfo
   require 'deploy-info/app'
   require 'deploy-info/deployment'
-  require 'deploy-info/railtie' if defined? ::Rails::Railtie
+  require 'deploy-info/railtie' if defined? Rails
 
   DEFAULT_REPO_PATH = '.git'
 
