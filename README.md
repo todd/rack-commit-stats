@@ -24,7 +24,7 @@ on your system. CMake should be available through your package manager of choice
 
 ## For Rails
 Mount the application on a new endpoint within your `routes.rb` file. You will
-probably want to limit access to this endpoint using some sort of authentication
+probably want to limit access to this endpoint using some sort of authorization
 constraint you've established, though this is totally optional.
 
 ```ruby
