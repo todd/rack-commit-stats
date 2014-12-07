@@ -1,5 +1,6 @@
 rack-commit-stats
 ===========
+[![Gem Version](https://badge.fury.io/rb/rack-commit-stats.svg)](http://badge.fury.io/rb/rack-commit-stats)
 [![Build Status](https://travis-ci.org/todd/rack-commit-stats.svg?branch=master)](https://travis-ci.org/todd/rack-commit-stats)
 [![Coverage Status](https://coveralls.io/repos/todd/rack-commit-stats/badge.png?branch=master)](https://coveralls.io/r/todd/rack-commit-stats?branch=master)
 [![Code Climate](https://codeclimate.com/github/todd/rack-commit-stats/badges/gpa.svg)](https://codeclimate.com/github/todd/rack-commit-stats)
