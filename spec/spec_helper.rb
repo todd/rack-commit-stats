@@ -1,8 +1,13 @@
-require 'awesome_print'
-require 'pry-byebug'
+if ENV['CI']
+  require 'coveralls'
+  Coveralls.wear!
+else
+  require 'awesome_print'
+  require 'pry-byebug'
 
-require 'simplecov'
-SimpleCov.start
+  require 'simplecov'
+  SimpleCov.start
+end
 
 require 'rack-commit-stats'
 

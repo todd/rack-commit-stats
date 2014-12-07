@@ -10,6 +10,8 @@ rvm:
   - 2.1.5
   - ruby-head
 
+gemfile: Gemfile.ci
+
 matrix:
   allow_failures:
     - rvm: ruby-head
