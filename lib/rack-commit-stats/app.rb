@@ -2,7 +2,7 @@ require 'json'
 
 module RackCommitStats
   class App
-    def call(env)
+    def self.call(env)
       status = 200
       headers = {"Content-Type" => "application/json"}
 
@@ -11,7 +11,9 @@ module RackCommitStats
 
     private
 
-    def response
+    def self.response
+      commit = Commit.new
+
       {
         branch: commit.branch,
         commit: {
@@ -20,10 +22,6 @@ module RackCommitStats
           author:   commit.author
         }
       }.to_json
-    end
-
-    def commit
-      @_commit ||= Commit.new
     end
   end
 end

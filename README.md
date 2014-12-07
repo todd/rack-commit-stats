@@ -23,7 +23,7 @@ probably want to limit access to this endpoint using some sort of authentication
 constraint you've established, though this is totally optional.
 
 ```ruby
-mount RackCommitStats::App.new => '/deploy',
+mount RackCommitStats::App => '/deploy',
   constraints: YouShallNotPassConstraint.new
 ```
 
@@ -42,7 +42,7 @@ from inside of it.
 
 ```ruby
 get '/deploy' do
-  RackCommitStats::App.new.call env
+  RackCommitStats::App.call env
 end
 ```
 

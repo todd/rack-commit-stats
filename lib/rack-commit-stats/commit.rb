@@ -2,13 +2,6 @@ require 'rugged'
 
 module RackCommitStats
   class Commit
-    attr_accessor :repo_path
-
-    # TODO: Remove
-    def initialize
-      @repo_path = RackCommitStats.config.repo_path
-    end
-
     def branch
       head.name.split('/').last
     end
@@ -28,7 +21,7 @@ module RackCommitStats
     private
 
     def repo
-      @_repo ||= Rugged::Repository.new(repo_path)
+      @_repo ||= Rugged::Repository.new(RackCommitStats.config.repo_path)
     end
 
     def head
