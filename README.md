@@ -1,9 +1,9 @@
 rack-commit-stats
+===========
 [![Build Status](https://travis-ci.org/todd/rack-commit-stats.svg?branch=master)](https://travis-ci.org/todd/rack-commit-stats)
 [![Coverage Status](https://coveralls.io/repos/todd/rack-commit-stats/badge.png?branch=master)](https://coveralls.io/r/todd/rack-commit-stats?branch=master)
 [![Code Climate](https://codeclimate.com/github/todd/rack-commit-stats/badges/gpa.svg)](https://codeclimate.com/github/todd/rack-commit-stats)
 [![Dependency Status](https://gemnasium.com/todd/rack-commit-stats.svg)](https://gemnasium.com/todd/rack-commit-stats)
-===========
 
 rack-commit-stats is a Rack application that will display information about the
 commit at a Git repository's HEAD. It's primary use case is for mounting within
