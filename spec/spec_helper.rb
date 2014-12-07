@@ -48,4 +48,8 @@ RSpec.configure do |config|
   # test failures related to randomization by passing the same `--seed` value
   # as the one that triggered the failure.
   #Kernel.srand config.seed
+
+  config.after do
+    RackCommitStats.class_variable_set(:@@_config, nil)
+  end
 end

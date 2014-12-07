@@ -1,10 +1,6 @@
 require 'spec_helper'
 
 RSpec.describe RackCommitStats do
-  after do
-    RackCommitStats.class_variable_set(:@@_config, nil)
-  end
-
   describe '.configure' do
     context 'with custom repo path' do
       it 'sets the custom repo path within the configuration' do
