@@ -11,7 +11,7 @@ module RackCommitStats
     end
 
     def message
-      commit.message
+      commit.message.gsub /[\r\n]/, ''
     end
 
     def author
