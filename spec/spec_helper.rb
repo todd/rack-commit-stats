@@ -9,6 +9,7 @@ else
   SimpleCov.start
 end
 
+require 'rack'
 require 'rack-commit-stats'
 
 RSpec.configure do |config|
