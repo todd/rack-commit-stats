@@ -9,19 +9,27 @@ module RackCommitStats
       [status, headers, [response]]
     end
 
-    private
+    class << self
+      def response
+        {
+          branch: commit.branch,
+          commit: {
+            revision: commit.revision,
+            message:  commit.message,
+            author:   commit.author
+          }
+        }.to_json
+      end
 
-    def self.response
-      commit = Commit.new
+      def commit
+        if RackCommitStats.config.capistrano_mode?
+          @_commit ||= CommitFromEnv.new
+        else
+          @_commit ||= Commit.new
+        end
 
-      {
-        branch: commit.branch,
-        commit: {
-          revision: commit.revision,
-          message:  commit.message,
-          author:   commit.author
-        }
-      }.to_json
+        @_commit
+      end
     end
   end
 end

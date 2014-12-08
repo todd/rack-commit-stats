@@ -18,11 +18,13 @@ module RackCommitStats
       commit.author.reject { |k, _| k == :time }
     end
 
-    private
+    protected
 
     def repo
       @_repo ||= Rugged::Repository.new(RackCommitStats.config.repo_path)
     end
+
+    private
 
     def head
       repo.head
