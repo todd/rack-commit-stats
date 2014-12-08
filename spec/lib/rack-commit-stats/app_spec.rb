@@ -24,7 +24,7 @@ RSpec.describe RackCommitStats::App do
     end
 
     it 'renders a JSON object with commit details as the body' do
-      allow(RackCommitStats::Commit).to receive(:new).and_return commit_double
+      allow(described_class).to receive(:commit).and_return commit_double
       _, _, response = subject
       expect(response.first).to eq(
         {
