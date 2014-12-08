@@ -3,7 +3,7 @@ require 'json'
 module RackCommitStats
   class App
     def self.call(env)
-      status = 200
+      status  = 200
       headers = {"Content-Type" => "application/json"}
 
       [status, headers, [response]]
