@@ -23,22 +23,48 @@ RSpec.describe RackCommitStats::App do
       expect(headers).to eq({"Content-Type" => "application/json"})
     end
 
-    it 'renders a JSON object with commit details as the body' do
-      allow(described_class).to receive(:commit).and_return commit_double
-      _, _, response = subject
-      expect(response.first).to eq(
-        {
-          branch: 'specs',
-          commit: {
-            revision: 'gibberish',
-            message:  'hello',
-            author: {
-              name:  'Foo Bar',
-              email: 'foo@bar.com'
+    context 'default mode' do
+      it 'renders a JSON object with commit details as the body' do
+        allow(described_class).to receive(:commit).and_return commit_double
+        _, _, response = subject
+        expect(response.first).to eq(
+          {
+            branch: 'specs',
+            commit: {
+              revision: 'gibberish',
+              message:  'hello',
+              author: {
+                name:  'Foo Bar',
+                email: 'foo@bar.com'
+              }
             }
-          }
-        }.to_json
-      )
+          }.to_json
+        )
+      end
+    end
+
+    context 'file mode' do
+      before do
+        RackCommitStats.configure { |config| config.mode = :file }
+      end
+
+      it 'renders a JSON object with commit details as the body' do
+        allow(described_class).to receive(:commit).and_return commit_double
+        _, _, response = subject
+        expect(response.first).to eq(
+          {
+            branch: 'specs',
+            commit: {
+              revision: 'gibberish',
+              message:  'hello',
+              author: {
+                name:  'Foo Bar',
+                email: 'foo@bar.com'
+              }
+            }
+          }.to_json
+        )
+      end
     end
   end
 

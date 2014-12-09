@@ -22,7 +22,7 @@ module RackCommitStats
       end
 
       def commit
-        if RackCommitStats.config.capistrano_mode?
+        if RackCommitStats.config.file_mode?
           @_commit ||= CommitFromEnv.new
         else
           @_commit ||= Commit.new
