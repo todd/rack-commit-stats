@@ -2,7 +2,7 @@ module RackCommitStats
   class CommitFromEnv < Commit
     def branch
       @_branch ||= File.open(
-        "#{RackCommitStats.config.file_path_prefix}/BRANCH", 'r'
+        File.join(RackCommitStats.config.file_path_prefix, 'BRANCH'), 'r'
       ).read.gsub /[\r\n]/, ''
     end
 
@@ -18,7 +18,7 @@ module RackCommitStats
 
     def sha_from_file
       @_sha ||= File.open(
-        "#{RackCommitStats.config.file_path_prefix}/REVISION", 'r'
+        File.join(RackCommitStats.config.file_path_prefix, 'REVISION'), 'r'
       ).read.gsub /[\r\n]/, ''
     end
   end
