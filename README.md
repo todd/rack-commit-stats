@@ -38,7 +38,7 @@ in the affected environment configuration files.
 
 ```ruby
 # production.rb
-config.rack_commit_stats.repo_path = '../repo'
+config.rack_commit_stats.repo_path = '../.git'
 ```
 
 ## For Sinatra
@@ -58,6 +58,29 @@ root.
 ```ruby
 RackCommitStats.configure do |config|
   config.repo_path = '../.git'
+end
+```
+
+## Using with Capistrano
+By default, the gem will attempt to read a Git repo on a standard path. However,
+deploying with a tool like Capistrano does some things that make reading Git
+state a bit trickier. The `.git` directory is moved outside of the project root
+and the deployed branch is not checked out on the server. To work around this,
+rack-commit-stats can read the branch and revision state from the `revisions.log`
+file created by Capistrano on deploys and pull repository state based on that.
+
+To enable this, you'll need to set a few additional configuration options:
+```ruby
+# Rails - production.rb (or other environment configuration file)
+config.rack_commit_stats.repo_path = "../../repo"
+config.rack_commit_stats.mode = :file
+config.rack_commit_stats.file_path_prefix = "../../"
+
+# Sinatra
+RackCommitStats.configure do |config|
+  config.repo_path = "../../repo"
+  config.mode = :file
+  config.file_path_prefix = "../../"
 end
 ```
 
