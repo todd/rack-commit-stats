@@ -1,9 +1,9 @@
 module RackCommitStats
   class CommitFromEnv < Commit
+    REVISION_LOG_FILE = 'revisions.log'
+
     def branch
-      @_branch ||= File.open(
-        File.join(RackCommitStats.config.file_path_prefix, 'BRANCH'), 'r'
-      ).read.gsub /[\r\n]/, ''
+      current_revision[1]
     end
 
     def revision
@@ -17,9 +17,15 @@ module RackCommitStats
     end
 
     def sha_from_file
-      @_sha ||= File.open(
-        File.join(RackCommitStats.config.file_path_prefix, 'REVISION'), 'r'
-      ).read.gsub /[\r\n]/, ''
+      current_revision[3].gsub(/[)]/, '')
+    end
+
+    def current_revision
+      @_current_revision ||= File.open(
+        File.join(
+          RackCommitStats.config.file_path_prefix, REVISION_LOG_FILE
+        ), 'r'
+      ).readlines.last.split
     end
   end
 end
