@@ -1,9 +1,9 @@
 PATH
   remote: .
   specs:
-    rack-commit-stats (0.1.0)
+    rack-commit-stats (0.1.1)
       rack (~> 1.0)
-      rugged (~> 0.21.0)
+      rugged (~> 0.21.3)
 
 GEM
   remote: https://rubygems.org/
@@ -48,7 +48,7 @@ GEM
     pry-byebug (2.0.0)
       byebug (~> 3.4)
       pry (~> 0.10)
-    rack (1.5.2)
+    rack (1.6.0)
     rake (10.3.2)
     rb-fsevent (0.9.4)
     rb-inotify (0.9.5)
@@ -65,7 +65,7 @@ GEM
     rspec-mocks (3.1.0)
       rspec-support (~> 3.1.0)
     rspec-support (3.1.0)
-    rugged (0.21.2)
+    rugged (0.21.3)
     simplecov (0.9.1)
       docile (~> 1.1.0)
       multi_json (~> 1.0)
