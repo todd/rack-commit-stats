@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    rack-commit-stats (0.1.1)
+    rack-commit-stats (0.1.2)
       rack (~> 1.0)
       rugged (~> 0.21.3)
 
@@ -65,7 +65,7 @@ GEM
     rspec-mocks (3.1.0)
       rspec-support (~> 3.1.0)
     rspec-support (3.1.0)
-    rugged (0.21.3)
+    rugged (0.21.4)
     simplecov (0.9.1)
       docile (~> 1.1.0)
       multi_json (~> 1.0)
