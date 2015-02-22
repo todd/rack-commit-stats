@@ -2,14 +2,14 @@ require 'json'
 
 module RackCommitStats
   class App
-    def self.call(env)
-      status  = 200
-      headers = {"Content-Type" => "application/json"}
-
-      [status, headers, [response]]
-    end
-
     class << self
+      def call(env)
+        status  = 200
+        headers = {"Content-Type" => "application/json"}
+
+        [status, headers, [response]]
+      end
+
       def response
         {
           branch: commit.branch,
