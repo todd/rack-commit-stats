@@ -10,17 +10,24 @@ module RackCommitStats
   DEFAULT_FILE_PATH_PREFIX = '.'
 
   class Configuration < Struct.new(:repo_path, :mode, :file_path_prefix)
+
+    # Public: Determines whether RackCommitStats should operate in file mode.
+    #
+    # Returns true if the application is operating in file mode, false
+    # otherwise.
     def file_mode?
       mode == FILE_MODE
     end
   end
 
+  # Public: Getter for app Configuration.
   def self.config
     @@_config ||= Configuration.new(
       DEFAULT_REPO_PATH, DEFAULT_MODE, DEFAULT_FILE_PATH_PREFIX
     )
   end
 
+  # Public: Setter for app Configuration.
   def self.configure
     yield self.config
   end
